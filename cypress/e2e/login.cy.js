@@ -9,5 +9,10 @@ describe('Login Test', () => {
       // For example, checking the URL to include a path like '/dashboard' after login
       cy.url().should('include', '/parabank/overview.htm'); // Replace with the expected URL after login
     });
+    it('Makes an API call', () => {
+      cy.request(Cypress.env('apiUrl')).then((response) => {
+        expect(response.status).to.eq(200)
+      })
+    })
   });
   

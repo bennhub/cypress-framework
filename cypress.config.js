@@ -6,7 +6,11 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: 'https://parabank.parasoft.com/',
+    env: {
+      apiUrl: 'http://parabank.parasoft.com/api',
+    },
     viewportWidth: 1280,
     viewportHeight: 720,
   },
+
 });
