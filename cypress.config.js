@@ -1,6 +1,5 @@
 const { defineConfig } = require('cypress');
 
-// Define Cypress configuration
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
@@ -12,13 +11,8 @@ module.exports = defineConfig({
     },
     viewportWidth: 1280,
     viewportHeight: 720,
-  },
+    screenshotsFolder: 'cypress/screenshots', // Folder to store screenshots
+    trashAssetsBeforeRuns: true, // Clean up screenshots before each run
+    video: false, // Disable video recording
+  }
 });
-
-// Separate Cypress runtime configuration
-/*Cypress.config({
-  screenshotsFolder: 'cypress/screenshots', // Folder to store screenshots
-  trashAssetsBeforeRuns: true, // Clean up screenshots before each run
-  video: false // Disable video recording
-});
-*/
