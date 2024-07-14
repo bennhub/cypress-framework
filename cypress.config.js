@@ -16,8 +16,9 @@ module.exports = defineConfig({
 });
 
 // Separate Cypress runtime configuration
-Cypress.config({
+/*Cypress.config({
   screenshotsFolder: 'cypress/screenshots', // Folder to store screenshots
   trashAssetsBeforeRuns: true, // Clean up screenshots before each run
   video: false // Disable video recording
 });
+*/
