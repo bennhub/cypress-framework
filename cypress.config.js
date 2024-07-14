@@ -14,3 +14,11 @@ module.exports = defineConfig({
   },
 
 });
+
+// Example setup in your test file
+Cypress.config({
+  screenshotsFolder: 'cypress/screenshots', // Folder to store screenshots
+  trashAssetsBeforeRuns: true, // Clean up screenshots before each run
+  video: false // Disable video recording
+});
+
