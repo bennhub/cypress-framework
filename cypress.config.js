@@ -1,9 +1,10 @@
 const { defineConfig } = require('cypress');
 
+// Define Cypress configuration
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // implement node event listeners here if needed
     },
     baseUrl: 'https://parabank.parasoft.com/',
     env: {
@@ -14,7 +15,7 @@ module.exports = defineConfig({
   },
 });
 
-// Example setup in your test file
+// Separate Cypress runtime configuration
 Cypress.config({
   screenshotsFolder: 'cypress/screenshots', // Folder to store screenshots
   trashAssetsBeforeRuns: true, // Clean up screenshots before each run
