@@ -7,7 +7,7 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://parabank.parasoft.com/',
     env: {
-      apiUrl: 'http://parabank.parasoft.com/api',
+      apiUrl: 'http://parabank.parasoft.com:8080/parabank/services/ParaBank',
     },
     viewportWidth: 1280,
     viewportHeight: 720,

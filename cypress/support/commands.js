@@ -24,9 +24,32 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('login', (username, password) => {
-    cy.get('input[name="username"]').type(username);
-    cy.get('input[name="password"]').type(password);
-    cy.get('input[type="submit"]').click();
+// Login Command
+Cypress.Commands.add("login", (username, password) => {
+  cy.visit('/');
+  cy.get('input[name="username"]').type(username);
+  cy.get('input[name="password"]').type(password);
+  cy.get('input[type="submit"]').click();
+  cy.url().should("include", "/parabank/overview.htm");
+});
+
+// Get Method: Account Details Api Command
+Cypress.Commands.add("getAccountDetails", (accountId) => {
+  const baseUrl = "http://parabank.parasoft.com:8080/parabank/services/bank";
+
+  cy.request({
+    method: "GET",
+    url: `${baseUrl}/accounts/${accountId}`,
+    headers: {
+      Accept: "application/json",
+    },
+  }).then((response) => {
+    // Assertions
+    expect(response.status).to.eq(200);
+    expect(response.body).to.have.property("id", accountId);
+    expect(response.body).to.have.property("type");
+    expect(response.body).to.have.property("balance");
   });
-  
+});
+
+
