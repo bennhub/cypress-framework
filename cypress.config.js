@@ -12,7 +12,6 @@ module.exports = defineConfig({
     viewportWidth: 1280,
     viewportHeight: 720,
   },
-
 });
 
 // Example setup in your test file
@@ -21,4 +20,3 @@ Cypress.config({
   trashAssetsBeforeRuns: true, // Clean up screenshots before each run
   video: false // Disable video recording
 });
-
