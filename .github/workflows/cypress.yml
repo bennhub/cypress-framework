@@ -21,6 +21,12 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install Cypress CLI
+        run: npm install -g cypress
+
+      - name: Install Cypress binary
+        run: npx cypress install
+
       - name: Install dependencies
         run: npm install
 
