@@ -28,11 +28,9 @@ jobs:
         run: npx cypress install
 
       - name: Install dependencies
-        run: npm 
-        
+        run: npm install
+
       - name: Run Cypress tests
         run: npx cypress run
         env:
           CYPRESS_BASE_URL: https://parabank.parasoft.com/
-
-          
